@@ -1,0 +1,13 @@
+rmd_files: [
+  "index.Rmd",
+  "01-intro.Rmd",
+  "02-install.Rmd",
+  "03-content.Rmd",
+  "04-publish.Rmd"
+]
+
+book_filename: "writing-gitbooks-tutorial"
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Chapter " 

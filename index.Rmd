@@ -1,0 +1,42 @@
+---
+title: "Writing GitBooks Tutorial"
+author: "Ville Langén"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "This is a tutorial about making tutorials in GitBook format using RStudio and bookdown."
+---
+
+# Preface {-}
+
+This is a tutorial about making tutorials in GitBook format using RStudio and bookdown.
+
+Whether you're a data scientist, researcher, or educator, creating beautiful, interactive tutorials and documentation is essential for sharing your knowledge effectively. This guide will walk you through the entire process of creating professional-looking GitBook-style tutorials using R, RStudio, and the powerful bookdown package.
+
+**The method we'll be covering is so powerful that it not only creates a web page but also generates an EPUB e-book and a PDF document automatically!** This very e-book is also released in EPUB and PDF formats:
+
+**[EPUB format](writing-gitbooks-tutorial.epub)** - Perfect for e-readers and mobile devices  
+**[PDF format](writing-gitbooks-tutorial.pdf)** - Print-ready professional document
+
+All three formats are generated from the same source files with a single command!
+
+## What You'll Learn {-}
+
+- How to set up your development environment
+- Understanding the GitBook format and bookdown
+- Writing effective tutorial content with R Markdown
+- Publishing your tutorials online
+
+## Prerequisites {-}
+
+Basic familiarity with R and R Markdown is helpful but not required. We'll guide you through everything step by step.
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+``` 

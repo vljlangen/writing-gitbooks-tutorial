@@ -1,0 +1,52 @@
+# Introduction to GitBook Format {#intro}
+
+## What is GitBook Format?
+
+GitBook is a modern documentation format that creates beautiful, interactive books and tutorials from Markdown files. Originally developed as a platform for writing and publishing books, the GitBook format has become popular for:
+
+- Technical documentation
+- API guides
+- Educational tutorials
+- Research papers
+- Software manuals
+
+The format features:
+
+- **Clean, responsive design** that works on desktop and mobile
+- **Interactive navigation** with a collapsible table of contents
+- **Search functionality** built-in
+- **Code syntax highlighting**
+- **Mathematical equations** support
+- **Cross-references** and internal linking
+
+## What is bookdown::gitbook?
+
+`bookdown::gitbook` is an R package output format that creates GitBook-style HTML books from R Markdown files. It's part of the `bookdown` package ecosystem created by Yihui Xie.
+
+Key features of `bookdown::gitbook`:
+
+- **Multi-chapter books** from multiple .Rmd files
+- **Automatic cross-referencing** of figures, tables, and sections
+- **Citation management** with BibTeX
+- **Code chunk execution** with live R output
+- **Mathematical notation** with LaTeX syntax
+- **Customizable themes** and styling
+
+## Real-World Examples
+
+Here are some excellent examples of GitBook-style tutorials and documentation:
+
+### Data Science
+- [R for Data Science](https://r4ds.had.co.nz/) by Hadley Wickham
+- [Advanced R](https://adv-r.hadley.nz/) by Hadley Wickham
+- [Tidy Modeling with R](https://www.tmwr.org/) by Max Kuhn and Julia Silge
+
+### Statistics and Research
+- [Statistical Inference via Data Science](https://moderndive.com/) by Chester Ismay
+- [Geocomputation with R](https://geocompr.robinlovelace.net/) by Robin Lovelace
+
+### Web Development
+- [Engineering Production-Grade Shiny Apps](https://engineering-shiny.org/)
+- [Mastering Shiny](https://mastering-shiny.org/) by Hadley Wickham
+
+These examples demonstrate the power and versatility of the GitBook format for creating comprehensive, professional documentation that's both beautiful and functional. 

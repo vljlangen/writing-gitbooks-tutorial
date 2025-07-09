@@ -1,0 +1,18 @@
+bookdown::gitbook:
+  config:
+    toc:
+      collapse: none
+      before: |
+        <li><a href="./">Writing GitBooks Tutorial</a></li>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+    download: ["pdf", "epub"]
+    sharing: ["twitter", "linkedin"]
+    edit: https://github.com/USERNAME/REPO/edit/main/%s
+
+bookdown::pdf_book:
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: yes
+
+bookdown::epub_book: default 

@@ -1,0 +1,151 @@
+# Installation and Setup {#install}
+
+Before we can start creating GitBook tutorials, we need to set up our development environment. This chapter will guide you through installing all the necessary tools.
+
+## Installing R
+
+R is the foundation of our toolkit. It's a free, open-source programming language specifically designed for statistical computing and graphics.
+
+### Download and Install R
+
+1. Visit the official R website: [https://cran.r-project.org](https://cran.r-project.org)
+2. Click on "Download R for your operating system"
+3. Choose a mirror close to your location
+4. Download the latest version of R
+5. Run the installer and follow the installation wizard
+
+### Verify R Installation
+
+Open your terminal or command prompt and type:
+
+```bash
+R --version
+```
+
+You should see output showing the R version number.
+
+## Installing RStudio
+
+RStudio is an integrated development environment (IDE) that makes working with R much more pleasant and productive.
+
+### Download and Install RStudio
+
+1. Visit: [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/)
+2. Download RStudio Desktop (free version)
+3. Run the installer appropriate for your operating system
+4. Launch RStudio to verify it works
+
+### First Launch
+
+When you first open RStudio, you'll see four panes:
+- **Console** (bottom left): Where R commands are executed
+- **Environment** (top right): Shows your variables and data
+- **Files/Plots/Help** (bottom right): File browser and output
+- **Editor** (top left): Where you'll write your .Rmd files
+
+## Installing Git
+
+Git is essential for version control and publishing your tutorials online.
+
+### Download and Install Git
+
+Visit [https://git-scm.com/](https://git-scm.com/) and download Git for your operating system.
+
+#### Windows
+- Download Git for Windows
+- Run the installer with default settings
+
+#### macOS
+- Git comes pre-installed on most Mac systems
+- Alternatively, install via Homebrew: `brew install git`
+
+#### Linux
+- Ubuntu/Debian: `sudo apt-get install git`
+- CentOS/RHEL: `sudo yum install git`
+
+### Configure Git
+
+Set up your identity (replace with your information):
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
+
+## Installing R Packages
+
+Now we'll install the R packages needed for creating GitBooks.
+
+### Essential Packages
+
+Open RStudio and run these commands in the Console:
+
+```{r eval=FALSE}
+# Install the main package
+install.packages("bookdown")
+
+# Install supporting packages
+install.packages(c("rmarkdown", "knitr"))
+```
+
+### Optional but Recommended Packages
+
+These packages will enhance your GitBook creation experience:
+
+```{r eval=FALSE}
+# For better plots and data manipulation
+install.packages(c("ggplot2", "dplyr", "tidyr"))
+
+# For web publishing
+install.packages("servr")
+
+# For advanced formatting
+install.packages(c("DT", "htmlwidgets"))
+```
+
+### Verify Package Installation
+
+Test that bookdown is working:
+
+```{r eval=FALSE}
+library(bookdown)
+packageVersion("bookdown")
+```
+
+## Create Your First Project
+
+Let's verify everything is working by creating a test project:
+
+1. In RStudio, go to **File > New Project > New Directory**
+2. Choose **Book Project using bookdown**
+3. Give it a name like "test-gitbook"
+4. Click **Create Project**
+
+RStudio will create a sample bookdown project with example files. You can render it by running:
+
+```{r eval=FALSE}
+bookdown::render_book("index.Rmd")
+```
+
+If everything is installed correctly, this will generate a GitBook in the `_book/` folder!
+
+## Troubleshooting
+
+### Common Issues
+
+**Issue**: "Package 'bookdown' not found"
+- **Solution**: Make sure you've installed the package: `install.packages("bookdown")`
+
+**Issue**: Git not recognized
+- **Solution**: Restart RStudio after installing Git, or add Git to your system PATH
+
+**Issue**: LaTeX errors when rendering
+- **Solution**: Install TinyTeX: `tinytex::install_tinytex()`
+
+### Getting Help
+
+- **R Documentation**: Use `?function_name` in R console
+- **Bookdown Guide**: [https://bookdown.org/yihui/bookdown/](https://bookdown.org/yihui/bookdown/)
+- **RStudio Community**: [https://community.rstudio.com/](https://community.rstudio.com/)
+
+Congratulations! You now have a complete development environment for creating GitBook tutorials. 
