@@ -39,3 +39,6 @@ $RECYCLE.BIN/
 *~
 *.tmp
 *.temp 
+
+# Bucket list
+bucket_list.md
