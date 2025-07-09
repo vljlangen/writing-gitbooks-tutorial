@@ -374,13 +374,29 @@ $RECYCLE.BIN/
 <li>Give it a descriptive name (e.g., “my-r-tutorial”)</li>
 <li>Make it <strong>Public</strong></li>
 </ul></li>
+<li><p><strong>Set up GitHub authentication</strong></p>
+<p>GitHub requires a Personal Access Token (PAT) for Git operations:</p>
+<ul>
+<li>Go to <a href="https://github.com/settings/tokens">github.com/settings/tokens</a></li>
+<li>Click <strong>Generate new token</strong> → <strong>Generate new token (classic)</strong></li>
+<li>Give it a name like “GitBook Publishing”</li>
+<li>Set expiration (recommend 90 days or 1 year)</li>
+<li>Select scopes: <strong>repo</strong> (full control of private repositories)</li>
+<li>Click <strong>Generate token</strong></li>
+<li><strong>Copy the token immediately</strong> (you won’t see it again!)</li>
+</ul></li>
+<li><p><strong>Configure Git with your credentials</strong></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="publish.html#cb29-1" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">&quot;Your Name&quot;</span></span>
+<span id="cb29-2"><a href="publish.html#cb29-2" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">&quot;your.email@example.com&quot;</span></span></code></pre></div></li>
 <li><p><strong>Initialize Git and push everything</strong></p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="publish.html#cb29-1" tabindex="-1"></a><span class="fu">git</span> init</span>
-<span id="cb29-2"><a href="publish.html#cb29-2" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb29-3"><a href="publish.html#cb29-3" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Initial commit with built book&quot;</span></span>
-<span id="cb29-4"><a href="publish.html#cb29-4" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/yourusername/your-repo.git</span>
-<span id="cb29-5"><a href="publish.html#cb29-5" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
-<span id="cb29-6"><a href="publish.html#cb29-6" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div></li>
+<div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="publish.html#cb30-1" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb30-2"><a href="publish.html#cb30-2" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb30-3"><a href="publish.html#cb30-3" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Initial commit with built book&quot;</span></span>
+<span id="cb30-4"><a href="publish.html#cb30-4" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/yourusername/your-repo.git</span>
+<span id="cb30-5"><a href="publish.html#cb30-5" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
+<span id="cb30-6"><a href="publish.html#cb30-6" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div>
+<p>When prompted for username: enter your GitHub username
+When prompted for password: <strong>paste your PAT token</strong> (not your GitHub password)</p></li>
 </ol>
 </div>
 <div id="step-4-deploy-with-netlify" class="section level3 hasAnchor" number="4.2.4">
@@ -413,11 +429,11 @@ $RECYCLE.BIN/
 <ol style="list-style-type: decimal">
 <li><p><strong>Make your changes</strong> to the .Rmd files</p></li>
 <li><p><strong>Rebuild locally</strong>:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="publish.html#cb30-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, <span class="st">&quot;bookdown::gitbook&quot;</span>)</span></code></pre></div></li>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="publish.html#cb31-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, <span class="st">&quot;bookdown::gitbook&quot;</span>)</span></code></pre></div></li>
 <li><p><strong>Push to GitHub</strong>:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="publish.html#cb31-1" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb31-2"><a href="publish.html#cb31-2" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Update content&quot;</span></span>
-<span id="cb31-3"><a href="publish.html#cb31-3" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre></div></li>
+<div class="sourceCode" id="cb32"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="publish.html#cb32-1" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb32-2"><a href="publish.html#cb32-2" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Update content&quot;</span></span>
+<span id="cb32-3"><a href="publish.html#cb32-3" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre></div></li>
 <li><p><strong>Netlify automatically updates</strong> your live site within seconds!</p></li>
 </ol>
 </div>
@@ -427,22 +443,25 @@ $RECYCLE.BIN/
 <h3><span class="header-section-number">4.4.1</span> Local Build Issues<a href="publish.html#local-build-issues" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Problem</strong>: Figures not displaying
 <strong>Solution</strong>: Clean and rebuild:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="publish.html#cb32-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">clean_book</span>()</span>
-<span id="cb32-2"><a href="publish.html#cb32-2" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, <span class="st">&quot;bookdown::gitbook&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="publish.html#cb33-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">clean_book</span>()</span>
+<span id="cb33-2"><a href="publish.html#cb33-2" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, <span class="st">&quot;bookdown::gitbook&quot;</span>)</span></code></pre></div>
 <p><strong>Problem</strong>: Old content still showing
 <strong>Solution</strong>: Delete <code>_book</code> folder and rebuild:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="publish.html#cb33-1" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;_book&quot;</span>, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb33-2"><a href="publish.html#cb33-2" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, <span class="st">&quot;bookdown::gitbook&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="publish.html#cb34-1" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;_book&quot;</span>, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb34-2"><a href="publish.html#cb34-2" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, <span class="st">&quot;bookdown::gitbook&quot;</span>)</span></code></pre></div>
 </div>
 <div id="netlify-deployment-issues" class="section level3 hasAnchor" number="4.4.2">
 <h3><span class="header-section-number">4.4.2</span> Netlify Deployment Issues<a href="publish.html#netlify-deployment-issues" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p><strong>Problem</strong>: Site shows 404 error
-<strong>Solution</strong>: Check that:
-- Publish directory is set to <code>_book</code>
-- The <code>_book</code> folder exists in your GitHub repository
-- Build command is empty (not needed)</p>
-<p><strong>Problem</strong>: Images not loading
-<strong>Solution</strong>: Ensure all image files are in your repository and paths are correct relative to the .Rmd files.</p>
+<p><strong>Problem</strong>: Site shows 404 error</p>
+<p><strong>Solution</strong>: Check that</p>
+<ul>
+<li>Publish directory is set to <code>_book</code></li>
+<li>The <code>_book</code> folder exists in your GitHub repository</li>
+<li>Build command is empty (not needed)</li>
+</ul>
+<p><strong>Problem</strong>: Images not loading</p>
+<p><strong>Solution</strong>: Ensure all image files are in your repository and paths are correct relative to the .Rmd files.</p>
+<hr />
 <p>Congratulations! Your GitBook tutorial is now live and accessible to the world. Remember to keep your content updated and respond to reader feedback to make your tutorial even better.</p>
 
 </div>

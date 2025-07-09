@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.10)  9 JUL 2025 19:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.3.10)  10 JUL 2025 00:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -555,55 +555,56 @@ File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [13
 
 ]
+Overfull \hbox (32.9989pt too wide) in paragraph at lines 562--562
+[]\TS1/lmtt/m/n/10 ```\T1/lmtt/m/n/10 {r your-chunk-name, echo=TRUE, eval=TRUE, fig.cap="Simple Line Plot"}[] 
+ []
 
-LaTeX Font Warning: Font shape `T1/lmtt/bx/it' in size <10> not available
-(Font)              Font shape `T1/lmtt/b/sl' tried instead on input line 554.
-
-
-LaTeX Font Warning: Font shape `TS1/lmtt/bx/it' in size <10> not available
-(Font)              Font shape `TS1/lmtt/b/sl' tried instead on input line 554.
-
+<writing-gitbooks-tutorial_files/figure-latex/chunk-name-1.pdf, id=173, 436.63126pt x 248.93pt>
+File: writing-gitbooks-tutorial_files/figure-latex/chunk-name-1.pdf Graphic file (type pdf)
+<use writing-gitbooks-tutorial_files/figure-latex/chunk-name-1.pdf>
+Package pdftex.def Info: writing-gitbooks-tutorial_files/figure-latex/chunk-name-1.pdf  used on input line 568.
+(pdftex.def)             Requested size: 436.63019pt x 248.92938pt.
 [14]
-<writing-gitbooks-tutorial_files/figure-latex/plot-example-1.pdf, id=182, 453.695pt x 279.0425pt>
+<writing-gitbooks-tutorial_files/figure-latex/plot-example-1.pdf, id=181, 453.695pt x 279.0425pt>
 File: writing-gitbooks-tutorial_files/figure-latex/plot-example-1.pdf Graphic file (type pdf)
 <use writing-gitbooks-tutorial_files/figure-latex/plot-example-1.pdf>
-Package pdftex.def Info: writing-gitbooks-tutorial_files/figure-latex/plot-example-1.pdf  used on input line 593.
+Package pdftex.def Info: writing-gitbooks-tutorial_files/figure-latex/plot-example-1.pdf  used on input line 609.
 (pdftex.def)             Requested size: 453.6939pt x 279.04181pt.
- [15 <./writing-gitbooks-tutorial_files/figure-latex/plot-example-1.pdf>] [16{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [17] [18]
+ [15 <./writing-gitbooks-tutorial_files/figure-latex/chunk-name-1.pdf>] [16{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc} <./writing-gitbooks-tutorial_files/figure-latex/plot-example-1.pdf>] [17] [18]
 Chapter 4.
 [19
 
 ]
-Overfull \hbox (38.36363pt too wide) in paragraph at lines 850--855
+Overfull \hbox (38.36363pt too wide) in paragraph at lines 869--874
 []\T1/lmr/m/n/10 (-20) Common for-mats: - \T1/lmtt/m/n/10 "bookdown::gitbook"\T1/lmr/m/n/10 (-20) : In-ter-ac-tive HTML - \T1/lmtt/m/n/10 "bookdown::pdf_book"\T1/lmr/m/n/10 (-20) :
  []
 
 
-Overfull \hbox (48.25673pt too wide) in paragraph at lines 850--855
+Overfull \hbox (48.25673pt too wide) in paragraph at lines 869--874
 \T1/lmr/m/n/10 (-20) PDF doc-u-ment - \T1/lmtt/m/n/10 "bookdown::epub_book"\T1/lmr/m/n/10 (-20) : EPUB e-book - \T1/lmtt/m/n/10 "bookdown::word_document2"\T1/lmr/m/n/10 (-20) :
  []
 
 [20] [21]
-Overfull \hbox (32.14357pt too wide) in paragraph at lines 987--989
-[]\T1/lmr/bx/n/10 (-20) Build com-mand\T1/lmr/m/n/10 (-20) : \T1/lmtt/m/n/10 Rscript -e "bookdown::render_book(\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 index.Rmd\TS1/lmtt/m/n/10 '\T1/lmtt/m/n/10 )" 
+Overfull \hbox (113.41702pt too wide) in paragraph at lines 1036--1037
+[]\T1/lmr/m/n/10 (-20) Your Git-Book is now live! Netlify will give you a URL like \T1/lmtt/m/n/10 https://wonderful-name-123456.netlify.app 
  []
 
 [22]
 No file writing-gitbooks-tutorial.bbl.
 [23] (./writing-gitbooks-tutorial.aux) ) 
 Here is how much of TeX's memory you used:
- 14619 strings out of 476025
- 231749 string characters out of 5790017
+ 14624 strings out of 476025
+ 232064 string characters out of 5790017
  1861388 words of memory out of 5000000
  34568 multiletter control sequences out of 15000+600000
- 589886 words of font info for 146 fonts, out of 8000000 for 9000
+ 589342 words of font info for 145 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 77i,8n,81p,1086b,623s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtko10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on writing-gitbooks-tutorial.pdf (23 pages, 413544 bytes).
+ 77i,8n,81p,1086b,636s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmro10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on writing-gitbooks-tutorial.pdf (23 pages, 386614 bytes).
 PDF statistics:
- 474 PDF objects out of 1000 (max. 8388607)
- 404 compressed objects within 5 object streams
- 124 named destinations out of 1000 (max. 500000)
- 45286 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 480 PDF objects out of 1000 (max. 8388607)
+ 410 compressed objects within 5 object streams
+ 128 named destinations out of 1000 (max. 500000)
+ 45291 words of extra memory for PDF output out of 51595 (max. 10000000)
 

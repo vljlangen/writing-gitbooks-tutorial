@@ -118,7 +118,25 @@ $RECYCLE.BIN/
    - Give it a descriptive name (e.g., "my-r-tutorial")
    - Make it **Public**
 
-2. **Initialize Git and push everything**
+2. **Set up GitHub authentication**
+   
+   GitHub requires a Personal Access Token (PAT) for Git operations:
+   
+   - Go to [github.com/settings/tokens](https://github.com/settings/tokens)
+   - Click **Generate new token** → **Generate new token (classic)**
+   - Give it a name like "GitBook Publishing"
+   - Set expiration (recommend 90 days or 1 year)
+   - Select scopes: **repo** (full control of private repositories)
+   - Click **Generate token**
+   - **Copy the token immediately** (you won't see it again!)
+
+3. **Configure Git with your credentials**
+   ```bash
+   git config --global user.name "Your Name"
+   git config --global user.email "your.email@example.com"
+   ```
+
+4. **Initialize Git and push everything**
    ```bash
    git init
    git add .
@@ -127,6 +145,9 @@ $RECYCLE.BIN/
    git branch -M main
    git push -u origin main
    ```
+   
+   When prompted for username: enter your GitHub username
+   When prompted for password: **paste your PAT token** (not your GitHub password)
 
 ### Step 4: Deploy with Netlify
 
@@ -186,14 +207,17 @@ bookdown::render_book("index.Rmd", "bookdown::gitbook")
 ### Netlify Deployment Issues
 
 **Problem**: Site shows 404 error
-**Solution**: Check that:
+
+**Solution**: Check that
+
 - Publish directory is set to `_book`
 - The `_book` folder exists in your GitHub repository
 - Build command is empty (not needed)
 
 **Problem**: Images not loading
+
 **Solution**: Ensure all image files are in your repository and paths are correct relative to the .Rmd files.
 
-
+---
 
 Congratulations! Your GitBook tutorial is now live and accessible to the world. Remember to keep your content updated and respond to reader feedback to make your tutorial even better. 

@@ -1,15 +1,15 @@
 # Fdb version 4
-["bibtex writing-gitbooks-tutorial"] 1752079994 "writing-gitbooks-tutorial.aux" "writing-gitbooks-tutorial.bbl" "writing-gitbooks-tutorial" 1752079994 0
+["bibtex writing-gitbooks-tutorial"] 1752096580 "writing-gitbooks-tutorial.aux" "writing-gitbooks-tutorial.bbl" "writing-gitbooks-tutorial" 1752096580 0
   "/usr/local/texlive/2023/texmf-dist/bibtex/bib/jurabib/book.bib" 1136766823 3095 06d31a152c5b167d3c6afe2b7acb6527 ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/base/apalike.bst" 1292289607 24635 604dafcc79f521a11ea73e506e1fbd98 ""
   "packages.bib" 0 -1 0 ""
-  "writing-gitbooks-tutorial.aux" 1752079994 25771 8a9f3593f55d52d0afc3ec7c3fac8ae9 "pdflatex"
+  "writing-gitbooks-tutorial.aux" 1752096580 25494 bc1c2e6ed3ff5d0bc1a27fa3ce486646 "pdflatex"
   (generated)
   "writing-gitbooks-tutorial.bbl"
   "writing-gitbooks-tutorial.blg"
   (rewritten before read)
-["pdflatex"] 1752079994 "/Users/ville/projects/rprojects/writing-gitbooks-tutorial/_book/writing-gitbooks-tutorial.tex" "writing-gitbooks-tutorial.pdf" "writing-gitbooks-tutorial" 1752079994 0
-  "/Users/ville/projects/rprojects/writing-gitbooks-tutorial/_book/writing-gitbooks-tutorial.tex" 1752079989 33174 48a49052bc431f23067f7bdf649b04c2 ""
+["pdflatex"] 1752096580 "/Users/ville/projects/rprojects/writing-gitbooks-tutorial/_book/writing-gitbooks-tutorial.tex" "writing-gitbooks-tutorial.pdf" "writing-gitbooks-tutorial" 1752096580 0
+  "/Users/ville/projects/rprojects/writing-gitbooks-tutorial/_book/writing-gitbooks-tutorial.tex" 1752096575 35031 693eb3cf654f7b107b125edd93010c86 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1254269338 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1202520719 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1202520719 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -33,7 +33,6 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm" 1254269338 12064 a35db870f0b76c338d749c56dc030ef5 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/ec-lmro10.tfm" 1254269338 12196 3ef208c5996a6e35328a273ab73fa1e1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/ec-lmtk10.tfm" 1254269338 1368 5bfeb1cf8f9f0acdb7436bfaa8e0da4e ""
-  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/ec-lmtko10.tfm" 1254269338 1376 0e75f8bc7fe0150b5e7be9366f5feb17 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/ec-lmtt10.tfm" 1254269338 1372 2ef2c2b492b3c4cd7879fe083abbb061 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/ec-lmtti10.tfm" 1254269338 1372 0dcee1a56926aed3dd9ded91b7563563 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/lmex10.tfm" 1148093231 992 ce925c9346c7613270a79afbee98c070 ""
@@ -55,7 +54,6 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmr7.tfm" 1254269338 11852 5a9022f105fd1ee2797df861e79ae9a0 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/rm-lmr8.tfm" 1254269338 11864 309fd7f43e4a0ba39f6f7644d76e8edf ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/ts1-lmr10.tfm" 1254269338 1556 b86d923e6b2f9aab2e313098a95cb0b8 ""
-  "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/ts1-lmtko10.tfm" 1254269338 1324 05309d1009122588c01b9e9980d09ad9 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/lm/ts1-lmtt10.tfm" 1254269338 1316 dd0a7a35fa2a1c1134451c343bdcaa45 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb" 1255129361 121021 1bf809ce4a594679006bd72263eba59b ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx12.pfb" 1255129361 116908 1fca96723793882c2e0160350c192fc8 ""
@@ -70,7 +68,6 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr8.pfb" 1255129361 122174 a7a08406857c9530a0320a2517f60370 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmro10.pfb" 1255129361 131205 e6b9f0f008cce138627a5f401db34a3b ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtk10.pfb" 1255129361 117319 7f8361f845845ce6d5b36cbd9f9cf377 ""
-  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtko10.pfb" 1255129361 140626 0a8aed0c44ab93dec59fbc1bd9f2eddf ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtt10.pfb" 1255129361 113227 1010e11451afc2822c95dae77c390042 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/lm/lmtti10.pfb" 1255129361 98822 859130196f7a6d2d1173200c66afbcff ""
   "/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -163,10 +160,11 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1710103833 4623355 b8cad38412faebe1ce5b780a45db67bd ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1710103831 7883457 eb4f553dff48a9ba815d694475bf4eee ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
-  "writing-gitbooks-tutorial.aux" 1752079994 25771 8a9f3593f55d52d0afc3ec7c3fac8ae9 "pdflatex"
+  "writing-gitbooks-tutorial.aux" 1752096580 25494 bc1c2e6ed3ff5d0bc1a27fa3ce486646 "pdflatex"
   "writing-gitbooks-tutorial.bbl" 0 -1 0 "bibtex writing-gitbooks-tutorial"
-  "writing-gitbooks-tutorial.tex" 1752079989 33174 48a49052bc431f23067f7bdf649b04c2 ""
-  "writing-gitbooks-tutorial.toc" 1752079994 6398 ff13a16e4280f4c93211ff95de1a6140 "pdflatex"
+  "writing-gitbooks-tutorial.tex" 1752096575 35031 693eb3cf654f7b107b125edd93010c86 ""
+  "writing-gitbooks-tutorial.toc" 1752096580 6189 1aa0ee309cacaec1546a325f3aed25ed "pdflatex"
+  "writing-gitbooks-tutorial_files/figure-latex/chunk-name-1.pdf" 1752079319 5690 578bccb488357b444b04439008b56243 ""
   "writing-gitbooks-tutorial_files/figure-latex/plot-example-1.pdf" 1752079319 7364 938b37c61aebb71cd438fb5accb948cc ""
   (generated)
   "writing-gitbooks-tutorial.aux"

@@ -117,7 +117,7 @@
 
 \title{Writing GitBooks Tutorial}
 \author{Ville Langén}
-\date{2025-07-09}
+\date{2025-07-10}
 
 \begin{document}
 \maketitle
@@ -544,30 +544,46 @@ mean(x)
 ```
 \end{verbatim}
 
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
 \subsection{Code Chunk Options}\label{code-chunk-options}
 
 Control how your code appears and executes:
 
-\begin{Shaded}
-\begin{Highlighting}[]
+\begin{verbatim}
+```{r your-chunk-name, echo=TRUE, eval=TRUE, fig.cap="Simple Line Plot"}
+# echo=TRUE: Show the code
+# eval=TRUE: Run the code  
+# fig.cap: Caption for figures
+plot(1:10, 1:10)
+```
+\end{verbatim}
 
-\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{} r}
-\CommentTok{\# echo=TRUE: Show the code}
-\CommentTok{\# eval=TRUE: Run the code  }
-\CommentTok{\# fig.cap: Caption for figures}
-\FunctionTok{plot}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{, }\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{)}
-\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{}}
+Here's the actual chunk in action:
 
-\AlertTok{![(\textbackslash{}\#fig:chunk{-}name)My Plot](writing{-}gitbooks{-}tutorial\_files/figure{-}latex/chunk{-}name{-}1.pdf)} 
-\end{Highlighting}
-\end{Shaded}
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio,alt={\label{fig:chunk-name}Simple Line Plot}]{writing-gitbooks-tutorial_files/figure-latex/chunk-name-1.pdf}}
+\caption{\label{fig:chunk-name}Simple Line Plot}
+\end{figure}
 
 \textbf{Common options:}
-- \texttt{echo=FALSE}: Hide code, show output
-- \texttt{eval=FALSE}: Show code, don't run it
-- \texttt{include=FALSE}: Run code, don't show anything
-- \texttt{message=FALSE}: Hide messages
-- \texttt{warning=FALSE}: Hide warnings
+
+\begin{itemize}
+\tightlist
+\item
+  \texttt{echo=FALSE}: Hide code, show output
+\item
+  \texttt{eval=FALSE}: Show code, don't run it
+\item
+  \texttt{include=FALSE}: Run code, don't show anything
+\item
+  \texttt{message=FALSE}: Hide messages
+\item
+  \texttt{warning=FALSE}: Hide warnings
+\end{itemize}
 
 \section{Creating Plots and Visualizations}\label{creating-plots-and-visualizations}
 
@@ -598,13 +614,9 @@ R excels at creating beautiful plots:
 
 You can embed R results directly in your text using inline code:
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{The mean of mtcars$mpg is 20.09 miles per gallon.}
-\end{Highlighting}
-\end{Shaded}
+The mean of \texttt{mtcars\$mpg} is \texttt{r\ round(mean(mtcars\$mpg),\ 2)} miles per gallon.
 
-\textbf{Result:} The mean of mtcars\$mpg is 20.09 miles per gallon.
+The mean of mtcars\$mpg is 20.09 miles per gallon.
 
 \section{Mathematical Notation}\label{mathematical-notation}
 
@@ -694,15 +706,21 @@ Reference it with: \texttt{Table\ \textbackslash{}@ref(tab:cars-table)}
 
 \subsection{Footnotes}\label{footnotes}
 
-Add footnotes for additional information:
+Add footnotes for additional information. First, reference the footnote, then define what the footnote reads.
+Footnotes will be placed at the bottom of the page automatically.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{This is important text\^{}}\CommentTok{[}\OtherTok{This is a footnote explaining the importance.}\CommentTok{]}\NormalTok{.}
+\NormalTok{This is the text where the footnote is referenced}\OtherTok{[\^{}note1]}\NormalTok{.}
+\OtherTok{[\^{}note1]: }\NormalTok{This is the content of the footnote.}
 \end{Highlighting}
 \end{Shaded}
 
-\textbf{Result:} This is important text\footnote{This is a footnote explaining the importance.}.
+Result:
+
+This is the text where the footnote is referenced\footnote{And this is the content of the footnote.}.
+
+(Scroll to the bottom of the page to see the footnote.)
 
 \subsection{Citations with BibTeX}\label{citations-with-bibtex}
 
@@ -732,15 +750,16 @@ Then cite it:
 \begin{Shaded}
 \begin{Highlighting}[]
 \AlertTok{![Caption for image](path/to/image.png)}
-
-\FunctionTok{\# Or with more control:}
-
-\InformationTok{\textasciigrave{}\textasciigrave{}\textasciigrave{} r}
-\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_graphics}\NormalTok{(}\StringTok{"path/to/image.png"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-````
+Or with more control:
+
+\begin{verbatim}
+```{r, fig.cap="My Image", out.width="50%", eval=FALSE}
+knitr::include_graphics("path/to/image.png")
+```
+\end{verbatim}
 
 \subsection{Callouts and Special Blocks}\label{callouts-and-special-blocks}
 
@@ -855,30 +874,25 @@ Common formats:
 
 \section{Publishing Online with GitHub + Netlify}\label{publishing-online-with-github-netlify}
 
-This is the most popular and free way to publish GitBooks online.
+The most reliable method: build locally, push to GitHub, deploy with Netlify.
 
-\subsection{Step 1: Prepare Your Project}\label{step-1-prepare-your-project}
+\subsection{Step 1: Build Your Book Locally}\label{step-1-build-your-book-locally}
 
-\subsubsection{Clean Up Files}\label{clean-up-files}
+First, render your book on your local machine:
 
-Make sure your project only contains necessary files:
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{render\_book}\NormalTok{(}\StringTok{"index.Rmd"}\NormalTok{, }\StringTok{"bookdown::gitbook"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
-\begin{verbatim}
-my-gitbook/
-|-- index.Rmd
-|-- 01-intro.Rmd
-|-- 02-install.Rmd
-|-- 03-content.Rmd
-|-- 04-publish.Rmd
-|-- _bookdown.yml
-|-- _output.yml
-|-- book.bib (if using citations)
-`-- README.md
-\end{verbatim}
+This creates the \texttt{\_book/} folder with all your HTML files.
 
-\subsubsection{Create .gitignore}\label{create-.gitignore}
+\subsection{Step 2: Prepare for GitHub}\label{step-2-prepare-for-github}
 
-Create a \texttt{.gitignore} file to exclude build artifacts:
+\subsubsection{Update .gitignore}\label{update-.gitignore}
+
+\textbf{Important}: Remove \texttt{\_book/} from \texttt{.gitignore} so the built book gets pushed to GitHub:
 
 \begin{verbatim}
 # R and RStudio files
@@ -888,8 +902,8 @@ Create a \texttt{.gitignore} file to exclude build artifacts:
 .Ruserdata
 *.Rproj
 
-# Bookdown files
-_book/
+# Bookdown files (keep _book/ commented out!)
+# _book/
 _bookdown_files/
 *.rds
 
@@ -911,7 +925,7 @@ $RECYCLE.BIN/
 *.temp
 \end{verbatim}
 
-\subsection{Step 2: Create GitHub Repository}\label{step-2-create-github-repository}
+\subsection{Step 3: Push to GitHub}\label{step-3-push-to-github}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -927,31 +941,58 @@ $RECYCLE.BIN/
   \item
     Give it a descriptive name (e.g., ``my-r-tutorial'')
   \item
-    Make it \textbf{Public} (required for free Netlify hosting)
+    Make it \textbf{Public}
   \end{itemize}
 \item
-  \textbf{Initialize Git in your project}
+  \textbf{Set up GitHub authentication}
+
+  GitHub requires a Personal Access Token (PAT) for Git operations:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Go to \href{https://github.com/settings/tokens}{github.com/settings/tokens}
+  \item
+    Click \textbf{Generate new token} → \textbf{Generate new token (classic)}
+  \item
+    Give it a name like ``GitBook Publishing''
+  \item
+    Set expiration (recommend 90 days or 1 year)
+  \item
+    Select scopes: \textbf{repo} (full control of private repositories)
+  \item
+    Click \textbf{Generate token}
+  \item
+    \textbf{Copy the token immediately} (you won't see it again!)
+  \end{itemize}
+\item
+  \textbf{Configure Git with your credentials}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{git}\NormalTok{ config }\AttributeTok{{-}{-}global}\NormalTok{ user.name }\StringTok{"Your Name"}
+\FunctionTok{git}\NormalTok{ config }\AttributeTok{{-}{-}global}\NormalTok{ user.email }\StringTok{"your.email@example.com"}
+\end{Highlighting}
+\end{Shaded}
+\item
+  \textbf{Initialize Git and push everything}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{git}\NormalTok{ init}
 \FunctionTok{git}\NormalTok{ add .}
-\FunctionTok{git}\NormalTok{ commit }\AttributeTok{{-}m} \StringTok{"Initial commit"}
-\end{Highlighting}
-\end{Shaded}
-\item
-  \textbf{Connect to GitHub}
-
-\begin{Shaded}
-\begin{Highlighting}[]
+\FunctionTok{git}\NormalTok{ commit }\AttributeTok{{-}m} \StringTok{"Initial commit with built book"}
 \FunctionTok{git}\NormalTok{ remote add origin https://github.com/yourusername/your{-}repo.git}
 \FunctionTok{git}\NormalTok{ branch }\AttributeTok{{-}M}\NormalTok{ main}
 \FunctionTok{git}\NormalTok{ push }\AttributeTok{{-}u}\NormalTok{ origin main}
 \end{Highlighting}
 \end{Shaded}
+
+  When prompted for username: enter your GitHub username
+  When prompted for password: \textbf{paste your PAT token} (not your GitHub password)
 \end{enumerate}
 
-\subsection{Step 3: Set Up Netlify}\label{step-3-set-up-netlify}
+\subsection{Step 4: Deploy with Netlify}\label{step-4-deploy-with-netlify}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -979,41 +1020,39 @@ $RECYCLE.BIN/
     Select your repository
   \end{itemize}
 \item
-  \textbf{Configure build settings}
+  \textbf{Configure deployment settings}
 
   \begin{itemize}
   \tightlist
   \item
-    \textbf{Build command}: \texttt{Rscript\ -e\ "bookdown::render\_book(\textquotesingle{}index.Rmd\textquotesingle{})"}
+    \textbf{Build command}: Leave empty (no build needed!)
   \item
-    \textbf{Publish directory}: \texttt{\_book/}
+    \textbf{Publish directory}: \texttt{\_book}
   \item
     Click \textbf{Deploy site}
   \end{itemize}
 \end{enumerate}
 
-\subsection{Step 4: Customize Your Netlify Site}\label{step-4-customize-your-netlify-site}
-
-\subsubsection{Custom Domain (Optional)}\label{custom-domain-optional}
-
-\begin{itemize}
-\tightlist
-\item
-  In your Netlify dashboard, go to \textbf{Domain settings}
-\item
-  Add your custom domain
-\item
-  Follow DNS configuration instructions
-\end{itemize}
-
-\subsubsection{Build Environment}\label{build-environment}
-
-Add these environment variables in Netlify:
-- \texttt{R\_VERSION}: \texttt{4.3.0} (or your preferred R version)
+Your GitBook is now live! Netlify will give you a URL like \texttt{https://wonderful-name-123456.netlify.app}
 
 \section{Updating Your Published Book}\label{updating-your-published-book}
 
-Simply push changes to your GitHub repository:
+To update your live GitBook:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Make your changes} to the .Rmd files
+\item
+  \textbf{Rebuild locally}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{render\_book}\NormalTok{(}\StringTok{"index.Rmd"}\NormalTok{, }\StringTok{"bookdown::gitbook"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+\item
+  \textbf{Push to GitHub}:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1022,40 +1061,55 @@ Simply push changes to your GitHub repository:
 \FunctionTok{git}\NormalTok{ push origin main}
 \end{Highlighting}
 \end{Shaded}
-
-Netlify will automatically rebuild and deploy your site.
+\item
+  \textbf{Netlify automatically updates} your live site within seconds!
+\end{enumerate}
 
 \section{Troubleshooting Common Issues}\label{troubleshooting-common-issues}
 
-\subsection{Build Failures}\label{build-failures}
+\subsection{Local Build Issues}\label{local-build-issues}
 
-\textbf{Problem}: R packages not found
-
-\begin{verbatim}
-Error: Package 'ggplot2' not found
-\end{verbatim}
-
-\textbf{Solution}: Update your build command to install packages:
+\textbf{Problem}: Figures not displaying
+\textbf{Solution}: Clean and rebuild:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\ExtensionTok{Rscript} \AttributeTok{{-}e} \StringTok{"install.packages(c(\textquotesingle{}ggplot2\textquotesingle{}, \textquotesingle{}dplyr\textquotesingle{})); bookdown::render\_book(\textquotesingle{}index.Rmd\textquotesingle{})"}
+\NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{clean\_book}\NormalTok{()}
+\NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{render\_book}\NormalTok{(}\StringTok{"index.Rmd"}\NormalTok{, }\StringTok{"bookdown::gitbook"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\textbf{Problem}: LaTeX errors in PDF rendering
-
-\begin{verbatim}
-Error: LaTeX failed to compile
-\end{verbatim}
-
-\textbf{Solution}: Install TinyTeX or remove PDF output temporarily:
+\textbf{Problem}: Old content still showing
+\textbf{Solution}: Delete \texttt{\_book} folder and rebuild:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{tinytex}\SpecialCharTok{::}\FunctionTok{install\_tinytex}\NormalTok{()}
+\FunctionTok{unlink}\NormalTok{(}\StringTok{"\_book"}\NormalTok{, }\AttributeTok{recursive =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{bookdown}\SpecialCharTok{::}\FunctionTok{render\_book}\NormalTok{(}\StringTok{"index.Rmd"}\NormalTok{, }\StringTok{"bookdown::gitbook"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+\subsection{Netlify Deployment Issues}\label{netlify-deployment-issues}
+
+\textbf{Problem}: Site shows 404 error
+
+\textbf{Solution}: Check that
+
+\begin{itemize}
+\tightlist
+\item
+  Publish directory is set to \texttt{\_book}
+\item
+  The \texttt{\_book} folder exists in your GitHub repository
+\item
+  Build command is empty (not needed)
+\end{itemize}
+
+\textbf{Problem}: Images not loading
+
+\textbf{Solution}: Ensure all image files are in your repository and paths are correct relative to the .Rmd files.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 Congratulations! Your GitBook tutorial is now live and accessible to the world. Remember to keep your content updated and respond to reader feedback to make your tutorial even better.
 
