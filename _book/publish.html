@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Publishing Your GitBook | Writing GitBooks Tutorial</title>
+  <meta name="description" content="This is a tutorial about making tutorials in GitBook format using RStudio and bookdown." />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Publishing Your GitBook | Writing GitBooks Tutorial" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a tutorial about making tutorials in GitBook format using RStudio and bookdown." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Publishing Your GitBook | Writing GitBooks Tutorial" />
+  
+  <meta name="twitter:description" content="This is a tutorial about making tutorials in GitBook format using RStudio and bookdown." />
+  
+
+<meta name="author" content="Ville Langén" />
+
+
+<meta name="date" content="2025-07-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="content.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Writing GitBooks Tutorial</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-youll-learn"><i class="fa fa-check"></i>What You’ll Learn</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prerequisites"><i class="fa fa-check"></i>Prerequisites</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to GitBook Format</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#what-is-gitbook-format"><i class="fa fa-check"></i><b>1.1</b> What is GitBook Format?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#what-is-bookdowngitbook"><i class="fa fa-check"></i><b>1.2</b> What is bookdown::gitbook?</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#real-world-examples"><i class="fa fa-check"></i><b>1.3</b> Real-World Examples</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#data-science"><i class="fa fa-check"></i><b>1.3.1</b> Data Science</a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#statistics-and-research"><i class="fa fa-check"></i><b>1.3.2</b> Statistics and Research</a></li>
+<li class="chapter" data-level="1.3.3" data-path="intro.html"><a href="intro.html#web-development"><i class="fa fa-check"></i><b>1.3.3</b> Web Development</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="install.html"><a href="install.html"><i class="fa fa-check"></i><b>2</b> Installation and Setup</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="install.html"><a href="install.html#installing-r"><i class="fa fa-check"></i><b>2.1</b> Installing R</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="install.html"><a href="install.html#download-and-install-r"><i class="fa fa-check"></i><b>2.1.1</b> Download and Install R</a></li>
+<li class="chapter" data-level="2.1.2" data-path="install.html"><a href="install.html#verify-r-installation"><i class="fa fa-check"></i><b>2.1.2</b> Verify R Installation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="install.html"><a href="install.html#installing-rstudio"><i class="fa fa-check"></i><b>2.2</b> Installing RStudio</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="install.html"><a href="install.html#download-and-install-rstudio"><i class="fa fa-check"></i><b>2.2.1</b> Download and Install RStudio</a></li>
+<li class="chapter" data-level="2.2.2" data-path="install.html"><a href="install.html#first-launch"><i class="fa fa-check"></i><b>2.2.2</b> First Launch</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="install.html"><a href="install.html#installing-git"><i class="fa fa-check"></i><b>2.3</b> Installing Git</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="install.html"><a href="install.html#download-and-install-git"><i class="fa fa-check"></i><b>2.3.1</b> Download and Install Git</a></li>
+<li class="chapter" data-level="2.3.2" data-path="install.html"><a href="install.html#configure-git"><i class="fa fa-check"></i><b>2.3.2</b> Configure Git</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="install.html"><a href="install.html#installing-r-packages"><i class="fa fa-check"></i><b>2.4</b> Installing R Packages</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="install.html"><a href="install.html#essential-packages"><i class="fa fa-check"></i><b>2.4.1</b> Essential Packages</a></li>
+<li class="chapter" data-level="2.4.2" data-path="install.html"><a href="install.html#optional-but-recommended-packages"><i class="fa fa-check"></i><b>2.4.2</b> Optional but Recommended Packages</a></li>
+<li class="chapter" data-level="2.4.3" data-path="install.html"><a href="install.html#verify-package-installation"><i class="fa fa-check"></i><b>2.4.3</b> Verify Package Installation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="install.html"><a href="install.html#create-your-first-project"><i class="fa fa-check"></i><b>2.5</b> Create Your First Project</a></li>
+<li class="chapter" data-level="2.6" data-path="install.html"><a href="install.html#troubleshooting"><i class="fa fa-check"></i><b>2.6</b> Troubleshooting</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="install.html"><a href="install.html#common-issues"><i class="fa fa-check"></i><b>2.6.1</b> Common Issues</a></li>
+<li class="chapter" data-level="2.6.2" data-path="install.html"><a href="install.html#getting-help"><i class="fa fa-check"></i><b>2.6.2</b> Getting Help</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="content.html"><a href="content.html"><i class="fa fa-check"></i><b>3</b> Writing Tutorial Content</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="content.html"><a href="content.html#project-structure-with-.rmd-files"><i class="fa fa-check"></i><b>3.1</b> Project Structure with .Rmd Files</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="content.html"><a href="content.html#file-naming-convention"><i class="fa fa-check"></i><b>3.1.1</b> File Naming Convention</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="content.html"><a href="content.html#headings-create-sections"><i class="fa fa-check"></i><b>3.2</b> Headings Create Sections</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="content.html"><a href="content.html#important-notes"><i class="fa fa-check"></i><b>3.2.1</b> Important Notes:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="content.html"><a href="content.html#code-chunks-the-heart-of-r-tutorials"><i class="fa fa-check"></i><b>3.3</b> Code Chunks: The Heart of R Tutorials</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="content.html"><a href="content.html#basic-code-chunk"><i class="fa fa-check"></i><b>3.3.1</b> Basic Code Chunk</a></li>
+<li class="chapter" data-level="3.3.2" data-path="content.html"><a href="content.html#code-chunk-options"><i class="fa fa-check"></i><b>3.3.2</b> Code Chunk Options</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="content.html"><a href="content.html#creating-plots-and-visualizations"><i class="fa fa-check"></i><b>3.4</b> Creating Plots and Visualizations</a></li>
+<li class="chapter" data-level="3.5" data-path="content.html"><a href="content.html#inline-r-code"><i class="fa fa-check"></i><b>3.5</b> Inline R Code</a></li>
+<li class="chapter" data-level="3.6" data-path="content.html"><a href="content.html#mathematical-notation"><i class="fa fa-check"></i><b>3.6</b> Mathematical Notation</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="content.html"><a href="content.html#inline-math"><i class="fa fa-check"></i><b>3.6.1</b> Inline Math</a></li>
+<li class="chapter" data-level="3.6.2" data-path="content.html"><a href="content.html#block-math"><i class="fa fa-check"></i><b>3.6.2</b> Block Math</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="content.html"><a href="content.html#cross-references-and-links"><i class="fa fa-check"></i><b>3.7</b> Cross-References and Links</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="content.html"><a href="content.html#referencing-figures-and-tables"><i class="fa fa-check"></i><b>3.7.1</b> Referencing Figures and Tables</a></li>
+<li class="chapter" data-level="3.7.2" data-path="content.html"><a href="content.html#referencing-sections"><i class="fa fa-check"></i><b>3.7.2</b> Referencing Sections</a></li>
+<li class="chapter" data-level="3.7.3" data-path="content.html"><a href="content.html#creating-tables"><i class="fa fa-check"></i><b>3.7.3</b> Creating Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="content.html"><a href="content.html#optional-enhancements"><i class="fa fa-check"></i><b>3.8</b> Optional Enhancements</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="content.html"><a href="content.html#footnotes"><i class="fa fa-check"></i><b>3.8.1</b> Footnotes</a></li>
+<li class="chapter" data-level="3.8.2" data-path="content.html"><a href="content.html#citations-with-bibtex"><i class="fa fa-check"></i><b>3.8.2</b> Citations with BibTeX</a></li>
+<li class="chapter" data-level="3.8.3" data-path="content.html"><a href="content.html#adding-images"><i class="fa fa-check"></i><b>3.8.3</b> Adding Images</a></li>
+<li class="chapter" data-level="3.8.4" data-path="content.html"><a href="content.html#callouts-and-special-blocks"><i class="fa fa-check"></i><b>3.8.4</b> Callouts and Special Blocks</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="publish.html"><a href="publish.html"><i class="fa fa-check"></i><b>4</b> Publishing Your GitBook</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="publish.html"><a href="publish.html#rendering-locally"><i class="fa fa-check"></i><b>4.1</b> Rendering Locally</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="publish.html"><a href="publish.html#basic-rendering-command"><i class="fa fa-check"></i><b>4.1.1</b> Basic Rendering Command</a></li>
+<li class="chapter" data-level="4.1.2" data-path="publish.html"><a href="publish.html#alternative-rendering-methods"><i class="fa fa-check"></i><b>4.1.2</b> Alternative Rendering Methods</a></li>
+<li class="chapter" data-level="4.1.3" data-path="publish.html"><a href="publish.html#previewing-your-book"><i class="fa fa-check"></i><b>4.1.3</b> Previewing Your Book</a></li>
+<li class="chapter" data-level="4.1.4" data-path="publish.html"><a href="publish.html#multiple-output-formats"><i class="fa fa-check"></i><b>4.1.4</b> Multiple Output Formats</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="publish.html"><a href="publish.html#publishing-online-with-github-netlify"><i class="fa fa-check"></i><b>4.2</b> Publishing Online with GitHub + Netlify</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="publish.html"><a href="publish.html#step-1-build-your-book-locally"><i class="fa fa-check"></i><b>4.2.1</b> Step 1: Build Your Book Locally</a></li>
+<li class="chapter" data-level="4.2.2" data-path="publish.html"><a href="publish.html#step-2-prepare-for-github"><i class="fa fa-check"></i><b>4.2.2</b> Step 2: Prepare for GitHub</a></li>
+<li class="chapter" data-level="4.2.3" data-path="publish.html"><a href="publish.html#step-3-push-to-github"><i class="fa fa-check"></i><b>4.2.3</b> Step 3: Push to GitHub</a></li>
+<li class="chapter" data-level="4.2.4" data-path="publish.html"><a href="publish.html#step-4-deploy-with-netlify"><i class="fa fa-check"></i><b>4.2.4</b> Step 4: Deploy with Netlify</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="publish.html"><a href="publish.html#updating-your-published-book"><i class="fa fa-check"></i><b>4.3</b> Updating Your Published Book</a></li>
+<li class="chapter" data-level="4.4" data-path="publish.html"><a href="publish.html#troubleshooting-common-issues"><i class="fa fa-check"></i><b>4.4</b> Troubleshooting Common Issues</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="publish.html"><a href="publish.html#local-build-issues"><i class="fa fa-check"></i><b>4.4.1</b> Local Build Issues</a></li>
+<li class="chapter" data-level="4.4.2" data-path="publish.html"><a href="publish.html#netlify-deployment-issues"><i class="fa fa-check"></i><b>4.4.2</b> Netlify Deployment Issues</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Writing GitBooks Tutorial</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="publish" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Publishing Your GitBook<a href="publish.html#publish" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Once you’ve written your tutorial content, it’s time to render and publish your GitBook. This chapter covers both local rendering for testing and online publishing for sharing with the world.</p>
+<div id="rendering-locally" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Rendering Locally<a href="publish.html#rendering-locally" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Local rendering lets you preview your GitBook before publishing. This is essential for testing and debugging.</p>
+<div id="basic-rendering-command" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Basic Rendering Command<a href="publish.html#basic-rendering-command" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The fundamental command to render your GitBook:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="publish.html#cb24-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, <span class="st">&quot;bookdown::gitbook&quot;</span>)</span></code></pre></div>
+<p>This command:
+1. Processes all your .Rmd files in order
+2. Executes all R code chunks
+3. Generates HTML files in the <code>_book/</code> directory
+4. Creates navigation and cross-references</p>
+</div>
+<div id="alternative-rendering-methods" class="section level3 hasAnchor" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Alternative Rendering Methods<a href="publish.html#alternative-rendering-methods" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="using-rstudio-build-tab" class="section level4 hasAnchor" number="4.1.2.1">
+<h4><span class="header-section-number">4.1.2.1</span> Using RStudio Build Tab<a href="publish.html#using-rstudio-build-tab" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ol style="list-style-type: decimal">
+<li>Open your project in RStudio</li>
+<li>Go to the <strong>Build</strong> tab (usually in the top-right pane)</li>
+<li>Click <strong>Build Book</strong></li>
+<li>Select <strong>bookdown::gitbook</strong></li>
+</ol>
+</div>
+<div id="using-the-knit-button" class="section level4 hasAnchor" number="4.1.2.2">
+<h4><span class="header-section-number">4.1.2.2</span> Using the Knit Button<a href="publish.html#using-the-knit-button" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>Open <code>index.Rmd</code></li>
+<li>Click the <strong>Knit</strong> dropdown</li>
+<li>Select <strong>Knit Book</strong></li>
+</ul>
+</div>
+</div>
+<div id="previewing-your-book" class="section level3 hasAnchor" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Previewing Your Book<a href="publish.html#previewing-your-book" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>After rendering, you can preview your book:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="publish.html#cb25-1" tabindex="-1"></a><span class="co"># Open the book in your browser</span></span>
+<span id="cb25-2"><a href="publish.html#cb25-2" tabindex="-1"></a>servr<span class="sc">::</span><span class="fu">httw</span>(<span class="st">&quot;_book&quot;</span>)</span></code></pre></div>
+<p>Or simply open <code>_book/index.html</code> in your web browser — my preferred method, every time.</p>
+</div>
+<div id="multiple-output-formats" class="section level3 hasAnchor" number="4.1.4">
+<h3><span class="header-section-number">4.1.4</span> Multiple Output Formats<a href="publish.html#multiple-output-formats" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can render to multiple formats simultaneously:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="publish.html#cb26-1" tabindex="-1"></a><span class="co"># Render GitBook, PDF, and EPUB</span></span>
+<span id="cb26-2"><a href="publish.html#cb26-2" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, <span class="st">&quot;all&quot;</span>)</span></code></pre></div>
+<p>Common formats:
+- <code>"bookdown::gitbook"</code>: Interactive HTML
+- <code>"bookdown::pdf_book"</code>: PDF document
+- <code>"bookdown::epub_book"</code>: EPUB e-book
+- <code>"bookdown::word_document2"</code>: Word document</p>
+</div>
+</div>
+<div id="publishing-online-with-github-netlify" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Publishing Online with GitHub + Netlify<a href="publish.html#publishing-online-with-github-netlify" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The most reliable method: build locally, push to GitHub, deploy with Netlify.</p>
+<div id="step-1-build-your-book-locally" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Step 1: Build Your Book Locally<a href="publish.html#step-1-build-your-book-locally" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>First, render your book on your local machine:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="publish.html#cb27-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, <span class="st">&quot;bookdown::gitbook&quot;</span>)</span></code></pre></div>
+<p>This creates the <code>_book/</code> folder with all your HTML files.</p>
+</div>
+<div id="step-2-prepare-for-github" class="section level3 hasAnchor" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Step 2: Prepare for GitHub<a href="publish.html#step-2-prepare-for-github" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="update-.gitignore" class="section level4 hasAnchor" number="4.2.2.1">
+<h4><span class="header-section-number">4.2.2.1</span> Update .gitignore<a href="publish.html#update-.gitignore" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p><strong>Important</strong>: Remove <code>_book/</code> from <code>.gitignore</code> so the built book gets pushed to GitHub:</p>
+<pre><code># R and RStudio files
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+
+# Bookdown files (keep _book/ commented out!)
+# _book/
+_bookdown_files/
+*.rds
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Temporary files
+*~
+*.tmp
+*.temp</code></pre>
+</div>
+</div>
+<div id="step-3-push-to-github" class="section level3 hasAnchor" number="4.2.3">
+<h3><span class="header-section-number">4.2.3</span> Step 3: Push to GitHub<a href="publish.html#step-3-push-to-github" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><p><strong>Create a new repository on GitHub</strong></p>
+<ul>
+<li>Go to <a href="https://github.com">github.com</a></li>
+<li>Click <strong>New Repository</strong></li>
+<li>Give it a descriptive name (e.g., “my-r-tutorial”)</li>
+<li>Make it <strong>Public</strong></li>
+</ul></li>
+<li><p><strong>Initialize Git and push everything</strong></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="publish.html#cb29-1" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb29-2"><a href="publish.html#cb29-2" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb29-3"><a href="publish.html#cb29-3" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Initial commit with built book&quot;</span></span>
+<span id="cb29-4"><a href="publish.html#cb29-4" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/yourusername/your-repo.git</span>
+<span id="cb29-5"><a href="publish.html#cb29-5" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
+<span id="cb29-6"><a href="publish.html#cb29-6" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div></li>
+</ol>
+</div>
+<div id="step-4-deploy-with-netlify" class="section level3 hasAnchor" number="4.2.4">
+<h3><span class="header-section-number">4.2.4</span> Step 4: Deploy with Netlify<a href="publish.html#step-4-deploy-with-netlify" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><strong>Sign up for Netlify</strong>
+<ul>
+<li>Go to <a href="https://netlify.com">netlify.com</a></li>
+<li>Sign up with your GitHub account</li>
+</ul></li>
+<li><strong>Create a new site</strong>
+<ul>
+<li>Click <strong>New site from Git</strong></li>
+<li>Choose <strong>GitHub</strong></li>
+<li>Select your repository</li>
+</ul></li>
+<li><strong>Configure deployment settings</strong>
+<ul>
+<li><strong>Build command</strong>: Leave empty (no build needed!)</li>
+<li><strong>Publish directory</strong>: <code>_book</code></li>
+<li>Click <strong>Deploy site</strong></li>
+</ul></li>
+</ol>
+<p>Your GitBook is now live! Netlify will give you a URL like <code>https://wonderful-name-123456.netlify.app</code></p>
+</div>
+</div>
+<div id="updating-your-published-book" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Updating Your Published Book<a href="publish.html#updating-your-published-book" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>To update your live GitBook:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Make your changes</strong> to the .Rmd files</p></li>
+<li><p><strong>Rebuild locally</strong>:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="publish.html#cb30-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, <span class="st">&quot;bookdown::gitbook&quot;</span>)</span></code></pre></div></li>
+<li><p><strong>Push to GitHub</strong>:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="publish.html#cb31-1" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb31-2"><a href="publish.html#cb31-2" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Update content&quot;</span></span>
+<span id="cb31-3"><a href="publish.html#cb31-3" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre></div></li>
+<li><p><strong>Netlify automatically updates</strong> your live site within seconds!</p></li>
+</ol>
+</div>
+<div id="troubleshooting-common-issues" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Troubleshooting Common Issues<a href="publish.html#troubleshooting-common-issues" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="local-build-issues" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Local Build Issues<a href="publish.html#local-build-issues" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Problem</strong>: Figures not displaying
+<strong>Solution</strong>: Clean and rebuild:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="publish.html#cb32-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">clean_book</span>()</span>
+<span id="cb32-2"><a href="publish.html#cb32-2" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, <span class="st">&quot;bookdown::gitbook&quot;</span>)</span></code></pre></div>
+<p><strong>Problem</strong>: Old content still showing
+<strong>Solution</strong>: Delete <code>_book</code> folder and rebuild:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="publish.html#cb33-1" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;_book&quot;</span>, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb33-2"><a href="publish.html#cb33-2" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, <span class="st">&quot;bookdown::gitbook&quot;</span>)</span></code></pre></div>
+</div>
+<div id="netlify-deployment-issues" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Netlify Deployment Issues<a href="publish.html#netlify-deployment-issues" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Problem</strong>: Site shows 404 error
+<strong>Solution</strong>: Check that:
+- Publish directory is set to <code>_book</code>
+- The <code>_book</code> folder exists in your GitHub repository
+- Build command is empty (not needed)</p>
+<p><strong>Problem</strong>: Images not loading
+<strong>Solution</strong>: Ensure all image files are in your repository and paths are correct relative to the .Rmd files.</p>
+<p>Congratulations! Your GitBook tutorial is now live and accessible to the world. Remember to keep your content updated and respond to reader feedback to make your tutorial even better.</p>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="content.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": ["twitter", "linkedin"],
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/main/04-publish.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["writing-gitbooks-tutorial.pdf", "writing-gitbooks-tutorial.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

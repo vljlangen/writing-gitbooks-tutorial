@@ -5,22 +5,10 @@
 .Ruserdata
 *.Rproj
 
-# Bookdown files
+# Bookdown files (keep _book/ commented out!)
+# _book/
 _bookdown_files/
 *.rds
-*.html
-*.pdf
-*.epub
-
-# LaTeX files
-*.aux
-*.bbl
-*.blg
-*.fdb_latexmk
-*.fls
-*.log
-*.out
-*.toc
 
 # OS generated files
 .DS_Store
@@ -37,7 +25,4 @@ $RECYCLE.BIN/
 # Temporary files
 *~
 *.tmp
-*.temp 
-
-# Bucket list
-bucket_list.md
+*.temp

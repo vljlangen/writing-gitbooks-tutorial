@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Writing Tutorial Content | Writing GitBooks Tutorial</title>
+  <meta name="description" content="This is a tutorial about making tutorials in GitBook format using RStudio and bookdown." />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Writing Tutorial Content | Writing GitBooks Tutorial" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is a tutorial about making tutorials in GitBook format using RStudio and bookdown." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Writing Tutorial Content | Writing GitBooks Tutorial" />
+  
+  <meta name="twitter:description" content="This is a tutorial about making tutorials in GitBook format using RStudio and bookdown." />
+  
+
+<meta name="author" content="Ville Langén" />
+
+
+<meta name="date" content="2025-07-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="install.html"/>
+<link rel="next" href="publish.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Writing GitBooks Tutorial</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-youll-learn"><i class="fa fa-check"></i>What You’ll Learn</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prerequisites"><i class="fa fa-check"></i>Prerequisites</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction to GitBook Format</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#what-is-gitbook-format"><i class="fa fa-check"></i><b>1.1</b> What is GitBook Format?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#what-is-bookdowngitbook"><i class="fa fa-check"></i><b>1.2</b> What is bookdown::gitbook?</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#real-world-examples"><i class="fa fa-check"></i><b>1.3</b> Real-World Examples</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="intro.html"><a href="intro.html#data-science"><i class="fa fa-check"></i><b>1.3.1</b> Data Science</a></li>
+<li class="chapter" data-level="1.3.2" data-path="intro.html"><a href="intro.html#statistics-and-research"><i class="fa fa-check"></i><b>1.3.2</b> Statistics and Research</a></li>
+<li class="chapter" data-level="1.3.3" data-path="intro.html"><a href="intro.html#web-development"><i class="fa fa-check"></i><b>1.3.3</b> Web Development</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="install.html"><a href="install.html"><i class="fa fa-check"></i><b>2</b> Installation and Setup</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="install.html"><a href="install.html#installing-r"><i class="fa fa-check"></i><b>2.1</b> Installing R</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="install.html"><a href="install.html#download-and-install-r"><i class="fa fa-check"></i><b>2.1.1</b> Download and Install R</a></li>
+<li class="chapter" data-level="2.1.2" data-path="install.html"><a href="install.html#verify-r-installation"><i class="fa fa-check"></i><b>2.1.2</b> Verify R Installation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="install.html"><a href="install.html#installing-rstudio"><i class="fa fa-check"></i><b>2.2</b> Installing RStudio</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="install.html"><a href="install.html#download-and-install-rstudio"><i class="fa fa-check"></i><b>2.2.1</b> Download and Install RStudio</a></li>
+<li class="chapter" data-level="2.2.2" data-path="install.html"><a href="install.html#first-launch"><i class="fa fa-check"></i><b>2.2.2</b> First Launch</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="install.html"><a href="install.html#installing-git"><i class="fa fa-check"></i><b>2.3</b> Installing Git</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="install.html"><a href="install.html#download-and-install-git"><i class="fa fa-check"></i><b>2.3.1</b> Download and Install Git</a></li>
+<li class="chapter" data-level="2.3.2" data-path="install.html"><a href="install.html#configure-git"><i class="fa fa-check"></i><b>2.3.2</b> Configure Git</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="install.html"><a href="install.html#installing-r-packages"><i class="fa fa-check"></i><b>2.4</b> Installing R Packages</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="install.html"><a href="install.html#essential-packages"><i class="fa fa-check"></i><b>2.4.1</b> Essential Packages</a></li>
+<li class="chapter" data-level="2.4.2" data-path="install.html"><a href="install.html#optional-but-recommended-packages"><i class="fa fa-check"></i><b>2.4.2</b> Optional but Recommended Packages</a></li>
+<li class="chapter" data-level="2.4.3" data-path="install.html"><a href="install.html#verify-package-installation"><i class="fa fa-check"></i><b>2.4.3</b> Verify Package Installation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="install.html"><a href="install.html#create-your-first-project"><i class="fa fa-check"></i><b>2.5</b> Create Your First Project</a></li>
+<li class="chapter" data-level="2.6" data-path="install.html"><a href="install.html#troubleshooting"><i class="fa fa-check"></i><b>2.6</b> Troubleshooting</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="install.html"><a href="install.html#common-issues"><i class="fa fa-check"></i><b>2.6.1</b> Common Issues</a></li>
+<li class="chapter" data-level="2.6.2" data-path="install.html"><a href="install.html#getting-help"><i class="fa fa-check"></i><b>2.6.2</b> Getting Help</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="content.html"><a href="content.html"><i class="fa fa-check"></i><b>3</b> Writing Tutorial Content</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="content.html"><a href="content.html#project-structure-with-.rmd-files"><i class="fa fa-check"></i><b>3.1</b> Project Structure with .Rmd Files</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="content.html"><a href="content.html#file-naming-convention"><i class="fa fa-check"></i><b>3.1.1</b> File Naming Convention</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="content.html"><a href="content.html#headings-create-sections"><i class="fa fa-check"></i><b>3.2</b> Headings Create Sections</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="content.html"><a href="content.html#important-notes"><i class="fa fa-check"></i><b>3.2.1</b> Important Notes:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="content.html"><a href="content.html#code-chunks-the-heart-of-r-tutorials"><i class="fa fa-check"></i><b>3.3</b> Code Chunks: The Heart of R Tutorials</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="content.html"><a href="content.html#basic-code-chunk"><i class="fa fa-check"></i><b>3.3.1</b> Basic Code Chunk</a></li>
+<li class="chapter" data-level="3.3.2" data-path="content.html"><a href="content.html#code-chunk-options"><i class="fa fa-check"></i><b>3.3.2</b> Code Chunk Options</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="content.html"><a href="content.html#creating-plots-and-visualizations"><i class="fa fa-check"></i><b>3.4</b> Creating Plots and Visualizations</a></li>
+<li class="chapter" data-level="3.5" data-path="content.html"><a href="content.html#inline-r-code"><i class="fa fa-check"></i><b>3.5</b> Inline R Code</a></li>
+<li class="chapter" data-level="3.6" data-path="content.html"><a href="content.html#mathematical-notation"><i class="fa fa-check"></i><b>3.6</b> Mathematical Notation</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="content.html"><a href="content.html#inline-math"><i class="fa fa-check"></i><b>3.6.1</b> Inline Math</a></li>
+<li class="chapter" data-level="3.6.2" data-path="content.html"><a href="content.html#block-math"><i class="fa fa-check"></i><b>3.6.2</b> Block Math</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="content.html"><a href="content.html#cross-references-and-links"><i class="fa fa-check"></i><b>3.7</b> Cross-References and Links</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="content.html"><a href="content.html#referencing-figures-and-tables"><i class="fa fa-check"></i><b>3.7.1</b> Referencing Figures and Tables</a></li>
+<li class="chapter" data-level="3.7.2" data-path="content.html"><a href="content.html#referencing-sections"><i class="fa fa-check"></i><b>3.7.2</b> Referencing Sections</a></li>
+<li class="chapter" data-level="3.7.3" data-path="content.html"><a href="content.html#creating-tables"><i class="fa fa-check"></i><b>3.7.3</b> Creating Tables</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="content.html"><a href="content.html#optional-enhancements"><i class="fa fa-check"></i><b>3.8</b> Optional Enhancements</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="content.html"><a href="content.html#footnotes"><i class="fa fa-check"></i><b>3.8.1</b> Footnotes</a></li>
+<li class="chapter" data-level="3.8.2" data-path="content.html"><a href="content.html#citations-with-bibtex"><i class="fa fa-check"></i><b>3.8.2</b> Citations with BibTeX</a></li>
+<li class="chapter" data-level="3.8.3" data-path="content.html"><a href="content.html#adding-images"><i class="fa fa-check"></i><b>3.8.3</b> Adding Images</a></li>
+<li class="chapter" data-level="3.8.4" data-path="content.html"><a href="content.html#callouts-and-special-blocks"><i class="fa fa-check"></i><b>3.8.4</b> Callouts and Special Blocks</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="publish.html"><a href="publish.html"><i class="fa fa-check"></i><b>4</b> Publishing Your GitBook</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="publish.html"><a href="publish.html#rendering-locally"><i class="fa fa-check"></i><b>4.1</b> Rendering Locally</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="publish.html"><a href="publish.html#basic-rendering-command"><i class="fa fa-check"></i><b>4.1.1</b> Basic Rendering Command</a></li>
+<li class="chapter" data-level="4.1.2" data-path="publish.html"><a href="publish.html#alternative-rendering-methods"><i class="fa fa-check"></i><b>4.1.2</b> Alternative Rendering Methods</a></li>
+<li class="chapter" data-level="4.1.3" data-path="publish.html"><a href="publish.html#previewing-your-book"><i class="fa fa-check"></i><b>4.1.3</b> Previewing Your Book</a></li>
+<li class="chapter" data-level="4.1.4" data-path="publish.html"><a href="publish.html#multiple-output-formats"><i class="fa fa-check"></i><b>4.1.4</b> Multiple Output Formats</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="publish.html"><a href="publish.html#publishing-online-with-github-netlify"><i class="fa fa-check"></i><b>4.2</b> Publishing Online with GitHub + Netlify</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="publish.html"><a href="publish.html#step-1-build-your-book-locally"><i class="fa fa-check"></i><b>4.2.1</b> Step 1: Build Your Book Locally</a></li>
+<li class="chapter" data-level="4.2.2" data-path="publish.html"><a href="publish.html#step-2-prepare-for-github"><i class="fa fa-check"></i><b>4.2.2</b> Step 2: Prepare for GitHub</a></li>
+<li class="chapter" data-level="4.2.3" data-path="publish.html"><a href="publish.html#step-3-push-to-github"><i class="fa fa-check"></i><b>4.2.3</b> Step 3: Push to GitHub</a></li>
+<li class="chapter" data-level="4.2.4" data-path="publish.html"><a href="publish.html#step-4-deploy-with-netlify"><i class="fa fa-check"></i><b>4.2.4</b> Step 4: Deploy with Netlify</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="publish.html"><a href="publish.html#updating-your-published-book"><i class="fa fa-check"></i><b>4.3</b> Updating Your Published Book</a></li>
+<li class="chapter" data-level="4.4" data-path="publish.html"><a href="publish.html#troubleshooting-common-issues"><i class="fa fa-check"></i><b>4.4</b> Troubleshooting Common Issues</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="publish.html"><a href="publish.html#local-build-issues"><i class="fa fa-check"></i><b>4.4.1</b> Local Build Issues</a></li>
+<li class="chapter" data-level="4.4.2" data-path="publish.html"><a href="publish.html#netlify-deployment-issues"><i class="fa fa-check"></i><b>4.4.2</b> Netlify Deployment Issues</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Writing GitBooks Tutorial</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="content" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Writing Tutorial Content<a href="content.html#content" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Now that you have your environment set up, let’s learn how to create compelling tutorial content using R Markdown. This chapter covers the essential techniques for writing effective GitBook tutorials.</p>
+<div id="project-structure-with-.rmd-files" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Project Structure with .Rmd Files<a href="content.html#project-structure-with-.rmd-files" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Each <code>.Rmd</code> file in your project becomes a chapter in your GitBook. The structure is simple:</p>
+<pre><code>my-tutorial/
+|-- index.Rmd          # Main page (Chapter 0)
+|-- 01-chapter1.Rmd    # Chapter 1
+|-- 02-chapter2.Rmd    # Chapter 2
+|-- 03-chapter3.Rmd    # Chapter 3
+`-- ...</code></pre>
+<div id="file-naming-convention" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> File Naming Convention<a href="content.html#file-naming-convention" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><strong>index.Rmd</strong>: Always the main/first page</li>
+<li><strong>01-intro.Rmd</strong>: Use numbers for ordering</li>
+<li><strong>XY-descriptive-names.Rmd</strong>: Use descriptive names after numbers</li>
+</ul>
+</div>
+</div>
+<div id="headings-create-sections" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Headings Create Sections<a href="content.html#headings-create-sections" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Headings automatically create your table of contents and navigation structure:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb8-1"><a href="content.html#cb8-1" tabindex="-1"></a><span class="fu"># Chapter Title {#chapter-id}</span></span>
+<span id="cb8-2"><a href="content.html#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="content.html#cb8-3" tabindex="-1"></a><span class="fu">## Main Section</span></span>
+<span id="cb8-4"><a href="content.html#cb8-4" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="content.html#cb8-5" tabindex="-1"></a><span class="fu">### Subsection  </span></span>
+<span id="cb8-6"><a href="content.html#cb8-6" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="content.html#cb8-7" tabindex="-1"></a><span class="fu">#### Sub-subsection</span></span></code></pre></div>
+<div id="important-notes" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Important Notes:<a href="content.html#important-notes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><code># Chapter Title</code> creates a new chapter</li>
+<li><code>{#chapter-id}</code> creates an ID for cross-referencing</li>
+<li>Only use <code>#</code> for chapter titles in chapter files</li>
+<li>Use <code>##</code>, <code>###</code>, <code>####</code> for sections within chapters</li>
+</ul>
+</div>
+</div>
+<div id="code-chunks-the-heart-of-r-tutorials" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Code Chunks: The Heart of R Tutorials<a href="content.html#code-chunks-the-heart-of-r-tutorials" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Code chunks are what make R Markdown special. They execute R code and display the results:</p>
+<div id="basic-code-chunk" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Basic Code Chunk<a href="content.html#basic-code-chunk" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<pre><code>```{r}
+# This is R code
+x &lt;- c(1, 2, 3, 4, 5)
+mean(x)
+```</code></pre>
+<pre><code>## [1] 3</code></pre>
+</div>
+<div id="code-chunk-options" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Code Chunk Options<a href="content.html#code-chunk-options" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Control how your code appears and executes:</p>
+<pre><code>```{r your-chunk-name, echo=TRUE, eval=TRUE, fig.cap=&quot;Simple Line Plot&quot;}
+# echo=TRUE: Show the code
+# eval=TRUE: Run the code  
+# fig.cap: Caption for figures
+plot(1:10, 1:10)
+```</code></pre>
+<p>Here’s the actual chunk in action:</p>
+<div class="figure"><span style="display:block;" id="fig:chunk-name"></span>
+<img src="writing-gitbooks-tutorial_files/figure-html/chunk-name-1.png" alt="Simple Line Plot" width="672" />
+<p class="caption">
+Figure 3.1: Simple Line Plot
+</p>
+</div>
+<p><strong>Common options:</strong></p>
+<ul>
+<li><code>echo=FALSE</code>: Hide code, show output</li>
+<li><code>eval=FALSE</code>: Show code, don’t run it</li>
+<li><code>include=FALSE</code>: Run code, don’t show anything</li>
+<li><code>message=FALSE</code>: Hide messages</li>
+<li><code>warning=FALSE</code>: Hide warnings</li>
+</ul>
+</div>
+</div>
+<div id="creating-plots-and-visualizations" class="section level2 hasAnchor" number="3.4">
+<h2><span class="header-section-number">3.4</span> Creating Plots and Visualizations<a href="content.html#creating-plots-and-visualizations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>R excels at creating beautiful plots:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="content.html#cb12-1" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb12-2"><a href="content.html#cb12-2" tabindex="-1"></a><span class="fu">data</span>(mtcars)</span>
+<span id="cb12-3"><a href="content.html#cb12-3" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="content.html#cb12-4" tabindex="-1"></a><span class="fu">ggplot</span>(mtcars, <span class="fu">aes</span>(<span class="at">x =</span> mpg, <span class="at">y =</span> hp)) <span class="sc">+</span></span>
+<span id="cb12-5"><a href="content.html#cb12-5" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> <span class="fu">factor</span>(cyl))) <span class="sc">+</span></span>
+<span id="cb12-6"><a href="content.html#cb12-6" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Horsepower vs MPG&quot;</span>,</span>
+<span id="cb12-7"><a href="content.html#cb12-7" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">&quot;Miles per Gallon&quot;</span>,</span>
+<span id="cb12-8"><a href="content.html#cb12-8" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">&quot;Horsepower&quot;</span>,</span>
+<span id="cb12-9"><a href="content.html#cb12-9" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">&quot;Cylinders&quot;</span>) <span class="sc">+</span></span>
+<span id="cb12-10"><a href="content.html#cb12-10" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:plot-example"></span>
+<img src="writing-gitbooks-tutorial_files/figure-html/plot-example-1.png" alt="Sample Scatter Plot" width="672" />
+<p class="caption">
+Figure 3.2: Sample Scatter Plot
+</p>
+</div>
+</div>
+<div id="inline-r-code" class="section level2 hasAnchor" number="3.5">
+<h2><span class="header-section-number">3.5</span> Inline R Code<a href="content.html#inline-r-code" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>You can embed R results directly in your text using inline code:</p>
+<p>The mean of <code>mtcars$mpg</code> is <code>r round(mean(mtcars$mpg), 2)</code> miles per gallon.</p>
+<p>The mean of mtcars$mpg is 20.09 miles per gallon.</p>
+</div>
+<div id="mathematical-notation" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Mathematical Notation<a href="content.html#mathematical-notation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>LaTeX syntax works beautifully in GitBooks:</p>
+<div id="inline-math" class="section level3 hasAnchor" number="3.6.1">
+<h3><span class="header-section-number">3.6.1</span> Inline Math<a href="content.html#inline-math" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb13-1"><a href="content.html#cb13-1" tabindex="-1"></a>The formula is $y = mx + b$ where $m$ is the slope.</span></code></pre></div>
+<p><strong>Result:</strong> The formula is <span class="math inline">\(y = mx + b\)</span> where <span class="math inline">\(m\)</span> is the slope.</p>
+</div>
+<div id="block-math" class="section level3 hasAnchor" number="3.6.2">
+<h3><span class="header-section-number">3.6.2</span> Block Math<a href="content.html#block-math" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb14-1"><a href="content.html#cb14-1" tabindex="-1"></a>$$</span>
+<span id="cb14-2"><a href="content.html#cb14-2" tabindex="-1"></a>\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i</span>
+<span id="cb14-3"><a href="content.html#cb14-3" tabindex="-1"></a>$$</span></code></pre></div>
+<p><strong>Result:</strong>
+<span class="math display">\[
+\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+\]</span></p>
+</div>
+</div>
+<div id="cross-references-and-links" class="section level2 hasAnchor" number="3.7">
+<h2><span class="header-section-number">3.7</span> Cross-References and Links<a href="content.html#cross-references-and-links" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="referencing-figures-and-tables" class="section level3 hasAnchor" number="3.7.1">
+<h3><span class="header-section-number">3.7.1</span> Referencing Figures and Tables<a href="content.html#referencing-figures-and-tables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb15-1"><a href="content.html#cb15-1" tabindex="-1"></a>See Figure \@ref(fig:plot-example) for the scatter plot.</span></code></pre></div>
+<p><strong>Result:</strong> See Figure <a href="content.html#fig:plot-example">3.2</a> for the scatter plot.</p>
+</div>
+<div id="referencing-sections" class="section level3 hasAnchor" number="3.7.2">
+<h3><span class="header-section-number">3.7.2</span> Referencing Sections<a href="content.html#referencing-sections" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb16"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb16-1"><a href="content.html#cb16-1" tabindex="-1"></a>As we learned in Chapter \@ref(intro), GitBook format is powerful.</span></code></pre></div>
+<p><strong>Result:</strong> As we learned in Chapter <a href="intro.html#intro">1</a>, GitBook format is powerful.</p>
+</div>
+<div id="creating-tables" class="section level3 hasAnchor" number="3.7.3">
+<h3><span class="header-section-number">3.7.3</span> Creating Tables<a href="content.html#creating-tables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="content.html#cb17-1" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb17-2"><a href="content.html#cb17-2" tabindex="-1"></a>  <span class="fu">head</span>(mtcars[, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]), </span>
+<span id="cb17-3"><a href="content.html#cb17-3" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;First few rows of mtcars dataset&quot;</span>,</span>
+<span id="cb17-4"><a href="content.html#cb17-4" tabindex="-1"></a>  <span class="at">booktabs =</span> <span class="cn">TRUE</span></span>
+<span id="cb17-5"><a href="content.html#cb17-5" tabindex="-1"></a>)</span></code></pre></div>
+<table>
+<caption><span id="tab:cars-table">Table 3.1: </span>First few rows of mtcars dataset</caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">mpg</th>
+<th align="right">cyl</th>
+<th align="right">disp</th>
+<th align="right">hp</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Mazda RX4</td>
+<td align="right">21.0</td>
+<td align="right">6</td>
+<td align="right">160</td>
+<td align="right">110</td>
+</tr>
+<tr class="even">
+<td align="left">Mazda RX4 Wag</td>
+<td align="right">21.0</td>
+<td align="right">6</td>
+<td align="right">160</td>
+<td align="right">110</td>
+</tr>
+<tr class="odd">
+<td align="left">Datsun 710</td>
+<td align="right">22.8</td>
+<td align="right">4</td>
+<td align="right">108</td>
+<td align="right">93</td>
+</tr>
+<tr class="even">
+<td align="left">Hornet 4 Drive</td>
+<td align="right">21.4</td>
+<td align="right">6</td>
+<td align="right">258</td>
+<td align="right">110</td>
+</tr>
+<tr class="odd">
+<td align="left">Hornet Sportabout</td>
+<td align="right">18.7</td>
+<td align="right">8</td>
+<td align="right">360</td>
+<td align="right">175</td>
+</tr>
+<tr class="even">
+<td align="left">Valiant</td>
+<td align="right">18.1</td>
+<td align="right">6</td>
+<td align="right">225</td>
+<td align="right">105</td>
+</tr>
+</tbody>
+</table>
+<p>Reference it with: <code>Table \@ref(tab:cars-table)</code></p>
+</div>
+</div>
+<div id="optional-enhancements" class="section level2 hasAnchor" number="3.8">
+<h2><span class="header-section-number">3.8</span> Optional Enhancements<a href="content.html#optional-enhancements" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="footnotes" class="section level3 hasAnchor" number="3.8.1">
+<h3><span class="header-section-number">3.8.1</span> Footnotes<a href="content.html#footnotes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Add footnotes for additional information. First, reference the footnote, then define what the footnote reads.
+Footnotes will be placed at the bottom of the page automatically.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb18-1"><a href="content.html#cb18-1" tabindex="-1"></a>This is the text where the footnote is referenced<span class="ot">[^note1]</span>.</span>
+<span id="cb18-2"><a href="content.html#cb18-2" tabindex="-1"></a><span class="ot">[^note1]: </span>This is the content of the footnote.</span></code></pre></div>
+<p>Result:</p>
+<p>This is the text where the footnote is referenced<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<p>(Scroll to the bottom of the page to see the footnote.)</p>
+</div>
+<div id="citations-with-bibtex" class="section level3 hasAnchor" number="3.8.2">
+<h3><span class="header-section-number">3.8.2</span> Citations with BibTeX<a href="content.html#citations-with-bibtex" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>First, create a <code>references.bib</code> file:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode bibtex"><code class="sourceCode bibtex"><span id="cb19-1"><a href="content.html#cb19-1" tabindex="-1"></a><span class="va">@book</span>{<span class="ot">wickham2016r</span>,</span>
+<span id="cb19-2"><a href="content.html#cb19-2" tabindex="-1"></a>  <span class="dt">title</span>={R for data science: import, tidy, transform, visualize, and model data},</span>
+<span id="cb19-3"><a href="content.html#cb19-3" tabindex="-1"></a>  <span class="dt">author</span>={Wickham, Hadley and Grolemund, Garrett},</span>
+<span id="cb19-4"><a href="content.html#cb19-4" tabindex="-1"></a>  <span class="dt">year</span>={2016},</span>
+<span id="cb19-5"><a href="content.html#cb19-5" tabindex="-1"></a>  <span class="dt">publisher</span>={O&#39;Reilly Media}</span>
+<span id="cb19-6"><a href="content.html#cb19-6" tabindex="-1"></a>}</span></code></pre></div>
+<p>Then cite it:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb20-1"><a href="content.html#cb20-1" tabindex="-1"></a>According to @wickham2016r, data science is a powerful approach.</span></code></pre></div>
+</div>
+<div id="adding-images" class="section level3 hasAnchor" number="3.8.3">
+<h3><span class="header-section-number">3.8.3</span> Adding Images<a href="content.html#adding-images" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb21"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb21-1"><a href="content.html#cb21-1" tabindex="-1"></a><span class="al">![Caption for image](path/to/image.png)</span></span></code></pre></div>
+<p>Or with more control:</p>
+<pre><code>```{r, fig.cap=&quot;My Image&quot;, out.width=&quot;50%&quot;, eval=FALSE}
+knitr::include_graphics(&quot;path/to/image.png&quot;)
+```</code></pre>
+</div>
+<div id="callouts-and-special-blocks" class="section level3 hasAnchor" number="3.8.4">
+<h3><span class="header-section-number">3.8.4</span> Callouts and Special Blocks<a href="content.html#callouts-and-special-blocks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Create attention-grabbing callouts:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb23-1"><a href="content.html#cb23-1" tabindex="-1"></a><span class="at">&gt; **Note:** This is an important note that readers should pay attention to.</span></span>
+<span id="cb23-2"><a href="content.html#cb23-2" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="content.html#cb23-3" tabindex="-1"></a><span class="at">&gt; **Warning:** Be careful with this command as it might delete files.</span></span>
+<span id="cb23-4"><a href="content.html#cb23-4" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="content.html#cb23-5" tabindex="-1"></a><span class="at">&gt; **Tip:** Here&#39;s a helpful tip to make your work easier.</span></span></code></pre></div>
+<p><strong>Results:</strong></p>
+<blockquote>
+<p><strong>Note:</strong> This is an important note that readers should pay attention to.</p>
+</blockquote>
+<blockquote>
+<p><strong>Warning:</strong> Be careful with this command as it might delete files.</p>
+</blockquote>
+<blockquote>
+<p><strong>Tip:</strong> Here’s a helpful tip to make your work easier.</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>And this is the content of the footnote.<a href="content.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="install.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="publish.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": ["twitter", "linkedin"],
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/main/03-content.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["writing-gitbooks-tutorial.pdf", "writing-gitbooks-tutorial.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
