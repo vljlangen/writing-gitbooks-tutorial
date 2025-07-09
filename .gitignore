@@ -6,7 +6,6 @@
 *.Rproj
 
 # Bookdown files
-_book/
 _bookdown_files/
 *.rds
 *.html
