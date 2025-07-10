@@ -375,6 +375,8 @@ $RECYCLE.BIN/
 <li>Make it <strong>Public</strong></li>
 </ul></li>
 <li><p><strong>Set up GitHub authentication</strong></p>
+<p>First, install the <code>usethis</code> package if you haven’t already:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="publish.html#cb29-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;usethis&quot;</span>)</span></code></pre></div>
 <p>GitHub requires a Personal Access Token (PAT) for Git operations:</p>
 <ul>
 <li>Go to <a href="https://github.com/settings/tokens">github.com/settings/tokens</a></li>
@@ -386,15 +388,21 @@ $RECYCLE.BIN/
 <li><strong>Copy the token immediately</strong> (you won’t see it again!)</li>
 </ul></li>
 <li><p><strong>Configure Git with your credentials</strong></p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb29-1"><a href="publish.html#cb29-1" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">&quot;Your Name&quot;</span></span>
-<span id="cb29-2"><a href="publish.html#cb29-2" tabindex="-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">&quot;your.email@example.com&quot;</span></span></code></pre></div></li>
+<p>Use R functions to set up your Git configuration:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="publish.html#cb30-1" tabindex="-1"></a><span class="co"># Set your Git username and email</span></span>
+<span id="cb30-2"><a href="publish.html#cb30-2" tabindex="-1"></a>usethis<span class="sc">::</span><span class="fu">use_git_config</span>(<span class="at">user.name =</span> <span class="st">&quot;Your Name&quot;</span>, </span>
+<span id="cb30-3"><a href="publish.html#cb30-3" tabindex="-1"></a>                       <span class="at">user.email =</span> <span class="st">&quot;your.email@example.com&quot;</span>)</span>
+<span id="cb30-4"><a href="publish.html#cb30-4" tabindex="-1"></a></span>
+<span id="cb30-5"><a href="publish.html#cb30-5" tabindex="-1"></a><span class="co"># Store your PAT token securely</span></span>
+<span id="cb30-6"><a href="publish.html#cb30-6" tabindex="-1"></a>gitcreds<span class="sc">::</span><span class="fu">gitcreds_set</span>()</span></code></pre></div>
+<p>When you run <code>gitcreds::gitcreds_set()</code>, it will prompt you to paste your PAT token. This stores it securely for future Git operations.</p></li>
 <li><p><strong>Initialize Git and push everything</strong></p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb30-1"><a href="publish.html#cb30-1" tabindex="-1"></a><span class="fu">git</span> init</span>
-<span id="cb30-2"><a href="publish.html#cb30-2" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb30-3"><a href="publish.html#cb30-3" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Initial commit with built book&quot;</span></span>
-<span id="cb30-4"><a href="publish.html#cb30-4" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/yourusername/your-repo.git</span>
-<span id="cb30-5"><a href="publish.html#cb30-5" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
-<span id="cb30-6"><a href="publish.html#cb30-6" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb31-1"><a href="publish.html#cb31-1" tabindex="-1"></a><span class="fu">git</span> init</span>
+<span id="cb31-2"><a href="publish.html#cb31-2" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb31-3"><a href="publish.html#cb31-3" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Initial commit with built book&quot;</span></span>
+<span id="cb31-4"><a href="publish.html#cb31-4" tabindex="-1"></a><span class="fu">git</span> remote add origin https://github.com/yourusername/your-repo.git</span>
+<span id="cb31-5"><a href="publish.html#cb31-5" tabindex="-1"></a><span class="fu">git</span> branch <span class="at">-M</span> main</span>
+<span id="cb31-6"><a href="publish.html#cb31-6" tabindex="-1"></a><span class="fu">git</span> push <span class="at">-u</span> origin main</span></code></pre></div>
 <p>When prompted for username: enter your GitHub username
 When prompted for password: <strong>paste your PAT token</strong> (not your GitHub password)</p></li>
 </ol>
@@ -429,11 +437,11 @@ When prompted for password: <strong>paste your PAT token</strong> (not your GitH
 <ol style="list-style-type: decimal">
 <li><p><strong>Make your changes</strong> to the .Rmd files</p></li>
 <li><p><strong>Rebuild locally</strong>:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="publish.html#cb31-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, <span class="st">&quot;bookdown::gitbook&quot;</span>)</span></code></pre></div></li>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="publish.html#cb32-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, <span class="st">&quot;bookdown::gitbook&quot;</span>)</span></code></pre></div></li>
 <li><p><strong>Push to GitHub</strong>:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb32-1"><a href="publish.html#cb32-1" tabindex="-1"></a><span class="fu">git</span> add .</span>
-<span id="cb32-2"><a href="publish.html#cb32-2" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Update content&quot;</span></span>
-<span id="cb32-3"><a href="publish.html#cb32-3" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre></div></li>
+<div class="sourceCode" id="cb33"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb33-1"><a href="publish.html#cb33-1" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb33-2"><a href="publish.html#cb33-2" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">&quot;Update content&quot;</span></span>
+<span id="cb33-3"><a href="publish.html#cb33-3" tabindex="-1"></a><span class="fu">git</span> push origin main</span></code></pre></div></li>
 <li><p><strong>Netlify automatically updates</strong> your live site within seconds!</p></li>
 </ol>
 </div>
@@ -443,12 +451,12 @@ When prompted for password: <strong>paste your PAT token</strong> (not your GitH
 <h3><span class="header-section-number">4.4.1</span> Local Build Issues<a href="publish.html#local-build-issues" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><strong>Problem</strong>: Figures not displaying
 <strong>Solution</strong>: Clean and rebuild:</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="publish.html#cb33-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">clean_book</span>()</span>
-<span id="cb33-2"><a href="publish.html#cb33-2" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, <span class="st">&quot;bookdown::gitbook&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="publish.html#cb34-1" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">clean_book</span>()</span>
+<span id="cb34-2"><a href="publish.html#cb34-2" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, <span class="st">&quot;bookdown::gitbook&quot;</span>)</span></code></pre></div>
 <p><strong>Problem</strong>: Old content still showing
 <strong>Solution</strong>: Delete <code>_book</code> folder and rebuild:</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="publish.html#cb34-1" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;_book&quot;</span>, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb34-2"><a href="publish.html#cb34-2" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, <span class="st">&quot;bookdown::gitbook&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="publish.html#cb35-1" tabindex="-1"></a><span class="fu">unlink</span>(<span class="st">&quot;_book&quot;</span>, <span class="at">recursive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb35-2"><a href="publish.html#cb35-2" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>(<span class="st">&quot;index.Rmd&quot;</span>, <span class="st">&quot;bookdown::gitbook&quot;</span>)</span></code></pre></div>
 </div>
 <div id="netlify-deployment-issues" class="section level3 hasAnchor" number="4.4.2">
 <h3><span class="header-section-number">4.4.2</span> Netlify Deployment Issues<a href="publish.html#netlify-deployment-issues" class="anchor-section" aria-label="Anchor link to header"></a></h3>

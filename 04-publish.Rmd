@@ -120,6 +120,12 @@ $RECYCLE.BIN/
 
 2. **Set up GitHub authentication**
    
+   First, install the `usethis` package if you haven't already:
+   
+   ```{r eval=FALSE}
+   install.packages("usethis")
+   ```
+   
    GitHub requires a Personal Access Token (PAT) for Git operations:
    
    - Go to [github.com/settings/tokens](https://github.com/settings/tokens)
@@ -131,10 +137,19 @@ $RECYCLE.BIN/
    - **Copy the token immediately** (you won't see it again!)
 
 3. **Configure Git with your credentials**
-   ```bash
-   git config --global user.name "Your Name"
-   git config --global user.email "your.email@example.com"
+   
+   Use R functions to set up your Git configuration:
+   
+   ```{r eval=FALSE}
+   # Set your Git username and email
+   usethis::use_git_config(user.name = "Your Name", 
+                          user.email = "your.email@example.com")
+   
+   # Store your PAT token securely
+   gitcreds::gitcreds_set()
    ```
+   
+   When you run `gitcreds::gitcreds_set()`, it will prompt you to paste your PAT token. This stores it securely for future Git operations.
 
 4. **Initialize Git and push everything**
    ```bash

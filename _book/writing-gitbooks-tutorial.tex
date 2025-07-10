@@ -946,6 +946,14 @@ $RECYCLE.BIN/
 \item
   \textbf{Set up GitHub authentication}
 
+  First, install the \texttt{usethis} package if you haven't already:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"usethis"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
   GitHub requires a Personal Access Token (PAT) for Git operations:
 
   \begin{itemize}
@@ -968,12 +976,20 @@ $RECYCLE.BIN/
 \item
   \textbf{Configure Git with your credentials}
 
+  Use R functions to set up your Git configuration:
+
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{git}\NormalTok{ config }\AttributeTok{{-}{-}global}\NormalTok{ user.name }\StringTok{"Your Name"}
-\FunctionTok{git}\NormalTok{ config }\AttributeTok{{-}{-}global}\NormalTok{ user.email }\StringTok{"your.email@example.com"}
+\CommentTok{\# Set your Git username and email}
+\NormalTok{usethis}\SpecialCharTok{::}\FunctionTok{use\_git\_config}\NormalTok{(}\AttributeTok{user.name =} \StringTok{"Your Name"}\NormalTok{, }
+                       \AttributeTok{user.email =} \StringTok{"your.email@example.com"}\NormalTok{)}
+
+\CommentTok{\# Store your PAT token securely}
+\NormalTok{gitcreds}\SpecialCharTok{::}\FunctionTok{gitcreds\_set}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
+
+  When you run \texttt{gitcreds::gitcreds\_set()}, it will prompt you to paste your PAT token. This stores it securely for future Git operations.
 \item
   \textbf{Initialize Git and push everything}
 
