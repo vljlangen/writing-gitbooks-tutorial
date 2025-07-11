@@ -38,6 +38,7 @@ RStudio is an integrated development environment (IDE) that makes working with R
 ### First Launch
 
 When you first open RStudio, you'll see four panes:
+
 - **Console** (bottom left): Where R commands are executed
 - **Environment** (top right): Shows your variables and data
 - **Files/Plots/Help** (bottom right): File browser and output
